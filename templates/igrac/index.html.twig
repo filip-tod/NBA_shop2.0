@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Igrac index{% endblock %}
+
+{% block body %}
+    <h1>Igrac index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ime_i</th>
+                <th>Prezime_i</th>
+                <th>Visina</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for igrac in igracs %}
+            <tr>
+                <td>{{ igrac.id }}</td>
+                <td>{{ igrac.imeI }}</td>
+                <td>{{ igrac.prezimeI }}</td>
+                <td>{{ igrac.visina }}</td>
+                <td>
+                    <a href="{{ path('app_igrac_show', {'id': igrac.id}) }}">show</a>
+                    <a href="{{ path('app_igrac_edit', {'id': igrac.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_igrac_new') }}">Create new</a>
+{% endblock %}

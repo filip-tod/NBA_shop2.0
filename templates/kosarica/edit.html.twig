@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Kosarica{% endblock %}
+
+{% block body %}
+    <h1>Edit Kosarica</h1>
+
+    {{ include('kosarica/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_kosarica_index') }}">back to list</a>
+
+    {{ include('kosarica/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kosarica{% endblock %}
+
+{% block body %}
+    <h1>Kosarica</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ kosarica.id }}</td>
+            </tr>
+            <tr>
+                <th>Tezina</th>
+                <td>{{ kosarica.tezina }}</td>
+            </tr>
+            <tr>
+                <th>Datum_isporuke</th>
+                <td>{{ kosarica.datumIsporuke ? kosarica.datumIsporuke|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Cijena</th>
+                <td>{{ kosarica.cijena }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_kosarica_index') }}">back to list</a>
+
+    <a href="{{ path('app_kosarica_edit', {'id': kosarica.id}) }}">edit</a>
+
+    {{ include('kosarica/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Igrac{% endblock %}
+
+{% block body %}
+    <h1>Edit Igrac</h1>
+
+    {{ include('igrac/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_igrac_index') }}">back to list</a>
+
+    {{ include('igrac/_delete_form.html.twig') }}
+{% endblock %}

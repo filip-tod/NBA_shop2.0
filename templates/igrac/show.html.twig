@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Igrac{% endblock %}
+
+{% block body %}
+    <h1>Igrac</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ igrac.id }}</td>
+            </tr>
+            <tr>
+                <th>Ime_i</th>
+                <td>{{ igrac.imeI }}</td>
+            </tr>
+            <tr>
+                <th>Prezime_i</th>
+                <td>{{ igrac.prezimeI }}</td>
+            </tr>
+            <tr>
+                <th>Visina</th>
+                <td>{{ igrac.visina }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_igrac_index') }}">back to list</a>
+
+    <a href="{{ path('app_igrac_edit', {'id': igrac.id}) }}">edit</a>
+
+    {{ include('igrac/_delete_form.html.twig') }}
+{% endblock %}

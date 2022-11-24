@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dostava{% endblock %}
+
+{% block body %}
+    <h1>Dostava</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dostava.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_dostava_index') }}">back to list</a>
+
+    <a href="{{ path('app_dostava_edit', {'id': dostava.id}) }}">edit</a>
+
+    {{ include('dostava/_delete_form.html.twig') }}
+{% endblock %}

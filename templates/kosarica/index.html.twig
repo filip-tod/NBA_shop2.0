@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kosarica index{% endblock %}
+
+{% block body %}
+    <h1>Kosarica index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tezina</th>
+                <th>Datum_isporuke</th>
+                <th>Cijena</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kosarica in kosaricas %}
+            <tr>
+                <td>{{ kosarica.id }}</td>
+                <td>{{ kosarica.tezina }}</td>
+                <td>{{ kosarica.datumIsporuke ? kosarica.datumIsporuke|date('Y-m-d') : '' }}</td>
+                <td>{{ kosarica.cijena }}</td>
+                <td>
+                    <a href="{{ path('app_kosarica_show', {'id': kosarica.id}) }}">show</a>
+                    <a href="{{ path('app_kosarica_edit', {'id': kosarica.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_kosarica_new') }}">Create new</a>
+{% endblock %}

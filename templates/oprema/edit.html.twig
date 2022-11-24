@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Oprema{% endblock %}
+
+{% block body %}
+    <h1>Edit Oprema</h1>
+
+    {{ include('oprema/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_oprema_index') }}">back to list</a>
+
+    {{ include('oprema/_delete_form.html.twig') }}
+{% endblock %}

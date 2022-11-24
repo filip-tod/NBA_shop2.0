@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oprema{% endblock %}
+
+{% block body %}
+    <h1>Oprema</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ oprema.id }}</td>
+            </tr>
+            <tr>
+                <th>Cijena</th>
+                <td>{{ oprema.cijena }}</td>
+            </tr>
+            <tr>
+                <th>Vrsta</th>
+                <td>{{ oprema.vrsta }}</td>
+            </tr>
+            <tr>
+                <th>Velicina</th>
+                <td>{{ oprema.velicina }}</td>
+            </tr>
+            <tr>
+                <th>Boja</th>
+                <td>{{ oprema.boja }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_oprema_index') }}">back to list</a>
+
+    <a href="{{ path('app_oprema_edit', {'id': oprema.id}) }}">edit</a>
+
+    {{ include('oprema/_delete_form.html.twig') }}
+{% endblock %}

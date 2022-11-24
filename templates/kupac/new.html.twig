@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Kupac{% endblock %}
+
+{% block body %}
+    <h1>Create new Kupac</h1>
+
+    {{ include('kupac/_form.html.twig') }}
+
+    <a href="{{ path('app_kupac_index') }}">back to list</a>
+{% endblock %}

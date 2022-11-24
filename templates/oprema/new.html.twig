@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Oprema{% endblock %}
+
+{% block body %}
+    <h1>Create new Oprema</h1>
+
+    {{ include('oprema/_form.html.twig') }}
+
+    <a href="{{ path('app_oprema_index') }}">back to list</a>
+{% endblock %}

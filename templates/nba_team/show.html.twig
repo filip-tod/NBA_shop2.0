@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NbaTeam{% endblock %}
+
+{% block body %}
+    <h1>NbaTeam</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ nba_team.id }}</td>
+            </tr>
+            <tr>
+                <th>Trener</th>
+                <td>{{ nba_team.trener }}</td>
+            </tr>
+            <tr>
+                <th>Divizija</th>
+                <td>{{ nba_team.divizija }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_nba_team_index') }}">back to list</a>
+
+    <a href="{{ path('app_nba_team_edit', {'id': nba_team.id}) }}">edit</a>
+
+    {{ include('nba_team/_delete_form.html.twig') }}
+{% endblock %}

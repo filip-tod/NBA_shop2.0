@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kupac index{% endblock %}
+
+{% block body %}
+    <h1>Kupac index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Email</th>
+                <th>Adresa</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kupac in kupacs %}
+            <tr>
+                <td>{{ kupac.id }}</td>
+                <td>{{ kupac.ime }}</td>
+                <td>{{ kupac.prezime }}</td>
+                <td>{{ kupac.email }}</td>
+                <td>{{ kupac.adresa }}</td>
+                <td>
+                    <a href="{{ path('app_kupac_show', {'id': kupac.id}) }}">show</a>
+                    <a href="{{ path('app_kupac_edit', {'id': kupac.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_kupac_new') }}">Create new</a>
+{% endblock %}

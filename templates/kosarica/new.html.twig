@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Kosarica{% endblock %}
+
+{% block body %}
+    <h1>Create new Kosarica</h1>
+
+    {{ include('kosarica/_form.html.twig') }}
+
+    <a href="{{ path('app_kosarica_index') }}">back to list</a>
+{% endblock %}

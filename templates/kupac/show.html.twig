@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kupac{% endblock %}
+
+{% block body %}
+    <h1>Kupac</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ kupac.id }}</td>
+            </tr>
+            <tr>
+                <th>Ime</th>
+                <td>{{ kupac.ime }}</td>
+            </tr>
+            <tr>
+                <th>Prezime</th>
+                <td>{{ kupac.prezime }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ kupac.email }}</td>
+            </tr>
+            <tr>
+                <th>Adresa</th>
+                <td>{{ kupac.adresa }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_kupac_index') }}">back to list</a>
+
+    <a href="{{ path('app_kupac_edit', {'id': kupac.id}) }}">edit</a>
+
+    {{ include('kupac/_delete_form.html.twig') }}
+{% endblock %}
